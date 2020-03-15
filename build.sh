@@ -8,6 +8,7 @@ set -x
 set -o pipefail
 
 # Make sure to start with a clean 'manifests' dir
+rm kustomization.yaml
 rm -rf manifests
 mkdir -p manifests/setup
 
