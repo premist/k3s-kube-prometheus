@@ -23,12 +23,22 @@ local manifests = { ['setup/0namespace-' + name]: kp.kubePrometheus[name] for na
                   { ['grafana-' + name]: kp.grafana[name] for name in std.objectFields(kp.grafana) };
 
 local kustomizationResourceFile(name) = './manifests/' + name + '.yaml';
-local kustomization = {
+local resourcePaths = std.map(kustomizationResourceFile, std.objectFields(manifests));
+local isSetup(name) = std.startsWith(name, './manifests/setup/');
+
+local kustomizationSetup = {
   apiVersion: 'kustomize.config.k8s.io/v1beta1',
   kind: 'Kustomization',
-  resources: std.map(kustomizationResourceFile, std.objectFields(manifests)),
+  resources: std.filter(isSetup, resourcePaths),
+};
+
+local kustomizationMain = {
+  apiVersion: 'kustomize.config.k8s.io/v1beta1',
+  kind: 'Kustomization',
+  resources: resourcePaths - std.filter(isSetup, resourcePaths),
 };
 
 manifests {
-  '../kustomization': kustomization,
+  '../kustomizationSetup': kustomizationSetup,
+  '../kustomization': kustomizationMain,
 }
