@@ -18,8 +18,8 @@
           "subdir": "Documentation/etcd-mixin"
         }
       },
-      "version": "7444d3ad53deeef4fb2292c5ff4bfd9dc5b214b6",
-      "sum": "Ko3qhNfC2vN/houLh6C0Ryacjv70gl0DVPGU/PQ4OD0="
+      "version": "71170dd1d8b735e3646160d47b298b9218c7152c",
+      "sum": "pk7mLpdUrHuJKkj2vhD6LGMU7P+oYYooBXAeZyZa398="
     },
     {
       "source": {
@@ -28,7 +28,7 @@
           "subdir": "jsonnet/kube-prometheus"
         }
       },
-      "version": "ae589e91ce783e319ac4c9372ac95db136f4929f",
+      "version": "ee8077db04965d6b4d9e6a328d5283dd6ba71d33",
       "sum": "BZqKu3GcqEkUrKHMso3mUbx0LbmIMi7iBxWRUfFXOzM="
     },
     {
@@ -38,8 +38,8 @@
           "subdir": "jsonnet/prometheus-operator"
         }
       },
-      "version": "1aa773ddbbbd9b05405e9785e0190b975b1faadc",
-      "sum": "PlruMWn3QMjgLQVzn0DqlD1G8ijkew9icNNW4cpwRVA="
+      "version": "ef7a4661dc32edd54a8b53dd65e54c62962b526c",
+      "sum": "BxEGbzUbGVm08kdLDrv6Bsz2IrNgaCbazLh7g5ueFrU="
     },
     {
       "source": {
@@ -48,8 +48,8 @@
           "subdir": "grafonnet"
         }
       },
-      "version": "2eb9f50f329b1829297cc1f2734c2ae9c508152e",
-      "sum": "jqFOnMKyR2cy8FSJEClCPcPuVCv5+bF5b6qSEHkNClg="
+      "version": "f1ceb29c053445881cf47c8761225d463273f7e2",
+      "sum": "PQ1u4FqaLkqmYF1tE/BNx6Db8roTei0uqo+SKCwRlbo="
     },
     {
       "source": {
@@ -58,7 +58,7 @@
           "subdir": "grafana-builder"
         }
       },
-      "version": "c19a92e586a6752f11745b47f309b13f02ef7147",
+      "version": "d851699bb178b62deabb5532cdb9e48c1a83b1b9",
       "sum": "slxrtftVDiTlQK22ertdfrg4Epnq97gdrLI63ftUfaE="
     },
     {
@@ -79,8 +79,8 @@
           "subdir": ""
         }
       },
-      "version": "6f1b1e1e530a5547418e894039dc31d8a62c3132",
-      "sum": "/n1/XUrne7va2kS6nGILibe1KuQiilIYoBay1A9VpOo="
+      "version": "90a6d132e3c9558c0690153c9b404b16b4754139",
+      "sum": "RZn1B0sbrPEKenxKIrXGdDN3NGb9OesQ+IA5whAP4ik="
     },
     {
       "source": {
@@ -89,18 +89,8 @@
           "subdir": "lib/promgrafonnet"
         }
       },
-      "version": "6f1b1e1e530a5547418e894039dc31d8a62c3132",
+      "version": "90a6d132e3c9558c0690153c9b404b16b4754139",
       "sum": "VhgBM39yv0f4bKv8VfGg4FXkg573evGDRalip9ypKbc="
-    },
-    {
-      "source": {
-        "git": {
-          "remote": "https://github.com/metalmatze/slo-libsonnet",
-          "subdir": "slo-libsonnet"
-        }
-      },
-      "version": "5ddd7ffc39e7a54c9aca997c2c389a8046fab0ff",
-      "sum": "S7/+tnAkzVh8Li7sg7Hu4aeIQAWHCtxhRQ+k1OKjoQk="
     },
     {
       "source": {
@@ -109,8 +99,8 @@
           "subdir": "docs/node-mixin"
         }
       },
-      "version": "0107bc794204f50d887898da60032da890637471",
-      "sum": "VKdF0zPMSCiuIuXWblSz2VOeBaXzQ7fp40vz9sxj+Bo="
+      "version": "0c532984b7a6a00d67de07a9794aacfeec2c11d3",
+      "sum": "3jFV2qsc/GZe2GADswTYqxxP2zGOiANTj73W/VNFGqc="
     },
     {
       "source": {
@@ -119,8 +109,8 @@
           "subdir": "documentation/prometheus-mixin"
         }
       },
-      "version": "4d6f9b75e230465443391ca76a4182b130eb99e9",
-      "sum": "5EUgr6Spr1zNR8Y2/NevjvEkGV9WMvKo6nEScNER1Lc=",
+      "version": "7ecd2d1c24b430edc08233143fd208fbc0fabd2b",
+      "sum": "kRb3XBTe/AALDcaTFfyuiKqzhxtLvihBkVkvJ5cUd/I=",
       "name": "prometheus"
     }
   ],

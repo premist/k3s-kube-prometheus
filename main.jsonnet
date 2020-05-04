@@ -8,13 +8,8 @@ local kp =
   // (import 'kube-prometheus/kube-prometheus-thanos-sidecar.libsonnet') +
   (import 'override.jsonnet');
 
-local manifests = { ['setup/0namespace-' + name]: kp.kubePrometheus[name] for name in std.objectFields(kp.kubePrometheus) } +
-                  {
-                    ['setup/prometheus-operator-' + name]: kp.prometheusOperator[name]
-                    for name in std.filter((function(name) name != 'serviceMonitor'), std.objectFields(kp.prometheusOperator))
-                  } +
-                  // serviceMonitor is separated so that it can be created after the CRDs are ready
-                  { 'prometheus-operator-serviceMonitor': kp.prometheusOperator.serviceMonitor } +
+// serviceMonitor is separated so that it can be created after the CRDs are ready
+local manifests = { 'prometheus-operator-serviceMonitor': kp.prometheusOperator.serviceMonitor } +
                   { ['node-exporter-' + name]: kp.nodeExporter[name] for name in std.objectFields(kp.nodeExporter) } +
                   { ['kube-state-metrics-' + name]: kp.kubeStateMetrics[name] for name in std.objectFields(kp.kubeStateMetrics) } +
                   { ['alertmanager-' + name]: kp.alertmanager[name] for name in std.objectFields(kp.alertmanager) } +
@@ -23,22 +18,13 @@ local manifests = { ['setup/0namespace-' + name]: kp.kubePrometheus[name] for na
                   { ['grafana-' + name]: kp.grafana[name] for name in std.objectFields(kp.grafana) };
 
 local kustomizationResourceFile(name) = './manifests/' + name + '.yaml';
-local resourcePaths = std.map(kustomizationResourceFile, std.objectFields(manifests));
-local isSetup(name) = std.startsWith(name, './manifests/setup/');
 
-local kustomizationSetup = {
+local kustomization = {
   apiVersion: 'kustomize.config.k8s.io/v1beta1',
   kind: 'Kustomization',
-  resources: std.filter(isSetup, resourcePaths),
-};
-
-local kustomizationMain = {
-  apiVersion: 'kustomize.config.k8s.io/v1beta1',
-  kind: 'Kustomization',
-  resources: resourcePaths - std.filter(isSetup, resourcePaths),
+  resources: std.map(kustomizationResourceFile, std.objectFields(manifests)),
 };
 
 manifests {
-  '../kustomizationSetup': kustomizationSetup,
-  '../kustomization': kustomizationMain,
+  '../kustomization': kustomization,
 }
