@@ -10,7 +10,7 @@ Run two `kubectl apply` commands, for setting up CRDs and actual prometheus reso
 
 ```bash
 kubectl apply -k github.com/premist/k3s-kube-prometheus/setup
-kubectl apply -k github.com/premist/k3s/kube-prometheus
+kubectl apply -k github.com/premist/k3s-kube-prometheus
 ```
 
 
